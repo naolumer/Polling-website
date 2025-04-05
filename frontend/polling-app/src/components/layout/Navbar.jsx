@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import SideMenu from "./SideMenu";
+import logo from "../../assets/images/logo.png"
 
 const Navbar = ({ activeMenu }) => {
   const [openSideMenu, setOpenSideMenu] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = ({ activeMenu }) => {
         )}
       </button>
 
-      <h2 className="text-lg font-medium text-black">Polling App</h2>
+      <img className="w-28 " src={logo} alt="" />
 
       {openSideMenu && (
         <div className="fixed top-[61px] -ml-4 bg-white">
