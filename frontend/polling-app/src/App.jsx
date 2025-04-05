@@ -1,31 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import React from "react";
+import LoginForm from "./pages/Auth/LoginForm";
+import SignUpForm from "./pages/Auth/SignUpForm";
+import Home from "./pages/Dashboard/Home";
+import CreatePoll from "./pages/Dashboard/CreatePoll";
+import MyPolls from "./pages/Dashboard/MyPolls";
+import VotedPolls from "./pages/Dashboard/VotedPolls";
+import Bookmarks from "./pages/Dashboard/Bookmarks";
+import UserProvider from "./context/UserContext";
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Toaster } from "react-hot-toast";
 
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <pa
-}
+    <div>
+      <UserProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Root />} />
+            <Route path="/login" exact element={<LoginForm />} />
+            <Route path="/signUp" exact element={<SignUpForm />} />
+            <Route path="/dashboard" exact element={<Home />} />
+            <Route path="/create-poll" exact element={<CreatePoll />} />
+            <Route path="/my-polls" exact element={<MyPolls />} />
+            <Route path="/voted-polls" exact element={<VotedPolls />} />
+            <Route path="/bookmarked-polls" exact element={<Bookmarks />} />
+          </Routes>
+        </Router>
 
-export default App
+        <Toaster
+          toastOptions={{
+            className: "",
+            style: {
+              fontSize:'13px'
+            },
+          }}
+        />
+      </UserProvider>
+    </div>
+  );
+};
+
+export default App;
+
+// Define the Root component to handle the initial redirect
+const Root = () => {
+  // Check if token exists in localStorage
+  const isAuthenticated = !!localStorage.getItem("token");
+
+  // Redirect to dashboard if authenticated, otherwise to login
+  return isAuthenticated ? (
+    <Navigate to="/dashboard" />
+  ) : (
+    <Navigate to="/login" />
+  );
+};
