@@ -132,7 +132,7 @@ const SignUpForm = () => {
             CREATE ACCOUNT
           </button>
 
-          <p className="text-[13px] text-slate-800 mt-3">
+          <p className="text-[13px] text-slate-800 mt-3 md:mt-6">
             Already have an account?{" "}
             <Link className="font-medium text-primary underline" to="/login">
               Login
