@@ -301,7 +301,7 @@ exports.closePoll = async (req, res) => {
   } catch (err) {
     res
       .status(500)
-      .json({ message: "Error registering user", error: err.message });
+      .json({ message: "Error closing poll", error: err.message });
   }
 };
 
@@ -342,7 +342,7 @@ exports.bookmarkPoll = async (req, res) => {
   } catch (err) {
     res
       .status(500)
-      .json({ message: "Error registering user", error: err.message });
+      .json({ message: "Error bookmarking poll", error: err.message });
   }
 };
 
