@@ -387,7 +387,7 @@ exports.getBookmarkedPolls = async (req, res) => {
   } catch (err) {
     res
       .status(500)
-      .json({ message: "Error registering user", error: err.message });
+      .json({ message: "Error getting bookmarked polls", error: err.message });
   }
 };
 
@@ -415,6 +415,6 @@ exports.deletePoll = async (req, res) => {
   } catch (err) {
     res
       .status(500)
-      .json({ message: "Error registering user", error: err.message });
+      .json({ message: "Error deleting poll", error: err.message });
   }
 };
