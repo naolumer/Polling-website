@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "https://polling-app-frontend-rkx0.onrender.com";
 
 // utils/apiPaths.js
 export const API_PATHS = {
