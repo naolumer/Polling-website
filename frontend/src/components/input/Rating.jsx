@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { HiMiniStar } from "react-icons/hi2";
 
 const Rating = ({ maxStars = 5, value = 0, onChange, readOnly = false }) => {
