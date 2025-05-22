@@ -16,7 +16,6 @@ exports.registerUser = async (req, res) => {
     return res.status(400).json({ message: "All fields are required" });
   }
 
-  // Validation: Check username format
   // Allows alphanumeric characters and hyphens only
   const usernameRegex = /^[a-zA-Z0-9-]+$/;
   if (!usernameRegex.test(username)) {
