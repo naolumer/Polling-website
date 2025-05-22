@@ -21,7 +21,7 @@ exports.registerUser = async (req, res) => {
   if (!usernameRegex.test(username)) {
     return res.status(400).json({
       message:
-        "Invalid username. Only alphanumeric characters and hyphens are allowed. No spaces are permitted.",
+        "Invalid username. Only alphanumeric characters and hyphens are allowed.",
     });
   }
 
