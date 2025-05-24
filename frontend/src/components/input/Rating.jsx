@@ -9,13 +9,11 @@ const Rating = ({ maxStars = 5, value = 0, onChange, readOnly = false }) => {
       onChange(rating);
     }
   };
-
   const handleMouseEnter = (rating) => {
     if (!readOnly) {
       setHoverValue(rating);
     }
   };
-
   const handleMouseLeave = () => {
     if (!readOnly) {
       setHoverValue(0);
