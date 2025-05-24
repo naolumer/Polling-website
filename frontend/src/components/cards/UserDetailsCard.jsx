@@ -11,12 +11,12 @@ const StatsInfo = ({ label, value }) => {
 };
 
 const UserDetailsCard = ({
-  profileImageUrl,
-  fullname,
-  username,
-  totalPollsVotes,
-  totalPollsCreated,
-  totalPollsBookmarked,
+    profileImageUrl,
+    fullname,
+    username,
+    totalPollsVotes,
+    totalPollsCreated,
+    totalPollsBookmarked,
 }) => {
   return (
     <div className="bg-slate-100/50 rounded-lg mt-16 overflow-hidden">
