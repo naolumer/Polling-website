@@ -1,4 +1,3 @@
-import React from "react";
 import { HiOutlineTrash, HiMiniPlus } from "react-icons/hi2";
 
 const OptionImageSelector = ({ imageList, setImageList }) => {
@@ -15,7 +14,6 @@ const OptionImageSelector = ({ imageList, setImageList }) => {
       event.target.value = null;
     }
   };
-
   // Function to handle deleting an image
   const handleDeleteImage = (index) => {
     const updatedList = imageList.filter((_, idx) => idx !== index);
